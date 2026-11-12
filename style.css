@@ -1,0 +1,1058 @@
+/* =========================================
+   1. ROOT VARIABLES
+========================================= */
+
+:root {
+    --primary-color: #087B49;
+    --primary-dark: #005C38;
+    --primary-light: #20A66A;
+    --secondary-color: #48C18A;
+
+    --white: #FFFFFF;
+    --background-color: #F8FAF9;
+    --light-green: #E9F7F0;
+    --soft-green: #D8F1E4;
+
+    --heading-color: #071B35;
+    --text-color: #26364B;
+    --muted-color: #667085;
+
+    --border-color: #DCE8E2;
+
+    --shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 10px 30px rgba(0, 92, 56, 0.15);
+
+    --font-family: 'Poppins', Arial, sans-serif;
+
+    --radius-sm: 8px;
+    --radius-md: 15px;
+    --radius-lg: 25px;
+    --radius-pill: 50px;
+
+    --container-width: 1300px;
+
+    --transition: all 0.3s ease;
+}
+
+
+/* =========================================
+   2. GENERAL SETTINGS
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: var(--text-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: var(--heading-color);
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+ul {
+    margin: 15px 10px 0 20px;
+}
+
+li {
+    text-transform: capitalize;
+}
+
+
+/* =========================================
+   3. NAVIGATION BAR
+========================================= */
+
+nav {
+    background: var(--background-color);
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 4%;
+}
+
+.header {
+    width: 100%;
+    max-width: 1450px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 25px;
+}
+
+.header img {
+    width: 110px;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(15px, 3vw, 40px);
+}
+
+.nav-links a {
+    font-size: 15px;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.nav-button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+nav button {
+    padding: 10px 25px;
+    border-radius: 10px;
+    border: none;
+    background: var(--primary-dark);
+    color: white;
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+nav button:hover {
+    background: var(--primary-light);
+}
+
+nav span button {
+    color: var(--primary-color);
+    background: transparent;
+    border: 1px solid var(--primary-color);
+}
+
+
+/* =========================================
+   4. HERO SECTION
+========================================= */
+
+main {
+    width: 100%;
+
+    background:
+        linear-gradient(
+            to left,
+            rgba(255,255,255,0),
+            rgba(255,255,255,0.096),
+            rgba(255,255,255,0.493),
+            white,
+            rgb(245,245,245)
+        ),
+        url("./Collaborative Learning in the Green Tech Hub.png");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hero-section {
+    width: 100%;
+    min-height: 480px;
+
+    padding: 90px 7% 40px;
+}
+
+.hero-section span h4 {
+    background: var(--primary-light);
+    border-radius: 15px;
+    padding: 8px 18px;
+
+    text-transform: capitalize;
+    width: fit-content;
+
+    color: white;
+    font-size: 14px;
+}
+
+.hero-section h1 {
+    font-size: clamp(45px, 5.5vw, 70px);
+    text-transform: uppercase;
+    line-height: 1.05;
+    margin-top: 15px;
+    font-family: sans-serif;
+    color: var(--heading-color);
+}
+
+.hero-section h3 {
+    margin-top: 15px;
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+.hero-section ul {
+    line-height: 1.9;
+}
+
+.hero-section button {
+    background: var(--primary-color);
+    color: white;
+
+    padding: 12px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-transform: capitalize;
+    font-size: 16px;
+
+    border: none;
+    border-radius: 20px;
+
+    gap: 5px;
+    margin: 5px;
+
+    transition: var(--transition);
+}
+
+.hero-section button:hover {
+    background: var(--primary-dark);
+}
+
+.hero-section span button {
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.hero-section span button:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    gap: 10px;
+}
+
+
+/* =========================================
+   5. COURSES / FEATURES SECTION
+========================================= */
+
+.courses {
+    width: calc(100% - 100px);
+    max-width: 1070px;
+
+    margin: 20px auto 30px;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 20px;
+
+    background: var(--border-color);
+
+    min-height: 90px;
+    border-radius: 25px;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 15px;
+
+    border-right: 1px solid var(--primary-dark);
+    min-width: 0;
+}
+
+.content:last-child {
+    border-right: none;
+}
+
+.content .material-symbols-outlined {
+    color: var(--primary-color);
+    font-size: 30px;
+}
+
+.content h3 {
+    font-size: 16px;
+    color: var(--heading-color);
+}
+
+.content p {
+    font-size: 13px;
+    color: var(--muted-color);
+}
+
+
+/* =========================================
+   6. SERVICES SECTION
+========================================= */
+
+.services-section {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        1.3fr repeat(4, minmax(0, 1fr));
+
+    align-items: center;
+    gap: 20px;
+
+    padding: 50px 4%;
+
+    background: var(--light-green);
+}
+
+.what-we-offer {
+    padding: 10px;
+    min-width: 0;
+}
+
+.what-we-offer h3 {
+    width: fit-content;
+
+    background: var(--primary-color);
+    color: white;
+
+    padding: 8px 15px;
+    border-radius: 15px;
+
+    margin-bottom: 15px;
+}
+
+.what-we-offer h1 {
+    font-size: 36px;
+    text-transform: capitalize;
+    color: var(--heading-color);
+}
+
+.what-we-offer p {
+    line-height: 1.7;
+    margin-top: 10px;
+}
+
+.what-we-offer button {
+    padding: 12px 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    color: white;
+    border: none;
+
+    background: var(--primary-color);
+
+    text-transform: capitalize;
+    border-radius: 20px;
+
+    margin-top: 20px;
+    font-size: 15px;
+
+    transition: var(--transition);
+}
+
+.what-we-offer button:hover {
+    background: var(--primary-dark);
+}
+
+.offers {
+    background: var(--background-color);
+
+    padding: 20px 12px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-width: 0;
+    min-height: 190px;
+
+    border-radius: 20px;
+
+    transition: var(--transition);
+}
+
+.offers:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.offers span {
+    display: flex;
+    justify-content: center;
+
+    padding: 10px;
+
+    color: var(--primary-color);
+    font-size: 35px;
+}
+
+.offers h3 {
+    text-transform: capitalize;
+    text-align: center;
+
+    font-size: 16px;
+    color: var(--heading-color);
+
+    margin-bottom: 8px;
+}
+
+.offers p {
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   7. FOOTER SECTION
+========================================= */
+
+.footer {
+    width: 100%;
+
+    background: var(--primary-color);
+    color: white;
+
+    padding: 60px 5% 20px;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1450px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr 1fr 1fr 1fr;
+
+    gap: 35px;
+}
+
+.footer-box {
+    min-width: 0;
+}
+
+.footer-box h3 {
+    font-size: 19px;
+    margin-bottom: 22px;
+    color: white;
+}
+
+.footer-about h3 {
+    color: white;
+    margin-top: 15px;
+}
+
+.footer-logo {
+    width: 110px;
+    height: auto;
+}
+
+.footer-box p {
+    font-size: 14px;
+    line-height: 1.8;
+
+    color: #E0F1E8;
+
+    margin-bottom: 13px;
+}
+
+.footer-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-box ul li {
+    margin-bottom: 14px;
+}
+
+.footer-box ul li a {
+    color: #E0F1E8;
+
+    display: flex;
+    font-size: 14px;
+
+    transition: var(--transition);
+}
+
+.footer-box ul li a:hover {
+    color: white;
+    padding-left: 6px;
+}
+
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.social-links a {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--primary-dark);
+    border-radius: 50%;
+
+    color: white;
+    font-size: 12px;
+
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background: var(--primary-dark);
+}
+
+.footer-contact-btn {
+    display: inline-block;
+
+    margin-top: 12px;
+    padding: 12px 20px;
+
+    background: var(--primary-dark);
+    color: white;
+
+    border-radius: 5px;
+    font-size: 14px;
+
+    transition: var(--transition);
+}
+
+.footer-contact-btn:hover {
+    background: white;
+    color: var(--primary-color);
+}
+
+
+/* =========================================
+   8. FOOTER BOTTOM
+========================================= */
+
+.footer-bottom {
+    width: 100%;
+    max-width: 1250px;
+
+    margin: 50px auto 0;
+    padding-top: 22px;
+
+    border-top: 1px solid rgba(255,255,255,0.3);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    color: #E0F1E8;
+}
+
+.footer-bottom div {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-bottom a {
+    color: #E0F1E8;
+    font-size: 13px;
+}
+
+.footer-bottom a:hover {
+    color: white;
+}
+
+
+/* =========================================
+   9. TABLET RESPONSIVENESS
+   768px - 1024px
+========================================= */
+
+@media screen and (max-width: 1024px) {
+
+    .header {
+        gap: 15px;
+    }
+
+    .header img {
+        width: 85px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    nav button {
+        padding: 9px 15px;
+    }
+
+    .hero-section {
+        padding: 80px 5% 30px;
+    }
+
+    .courses {
+        width: calc(100% - 50px);
+    }
+
+    .services-section {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 40px 5%;
+    }
+
+    .what-we-offer {
+        grid-column: span 2;
+        text-align: center;
+    }
+
+    .what-we-offer h3 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .what-we-offer button {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 35px;
+    }
+
+}
+
+
+/* =========================================
+   10. MOBILE RESPONSIVENESS
+   481px - 767px
+========================================= */
+
+@media screen and (max-width: 767px) {
+
+    nav {
+        padding: 12px 15px;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .header img {
+        width: 75px;
+    }
+
+    .nav-links {
+        width: 100%;
+
+        display: flex;
+        flex-wrap: wrap;
+
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .nav-button {
+        justify-content: center;
+    }
+
+    .hero-section {
+        min-height: auto;
+        padding: 55px 25px 30px;
+        text-align: center;
+    }
+
+    .hero-section span h4 {
+        margin: auto;
+    }
+
+    .hero-section h1 {
+        font-size: clamp(38px, 8vw, 50px);
+        line-height: 1.15;
+    }
+
+    .hero-section h3 {
+        font-size: 15px;
+    }
+
+    .hero-section ul {
+        display: inline-block;
+        text-align: left;
+        font-size: 14px;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .courses {
+        width: calc(100% - 40px);
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        padding: 15px;
+        gap: 10px;
+
+        margin: 20px auto;
+    }
+
+    .content {
+        border-right: none;
+        padding: 12px 5px;
+        justify-content: flex-start;
+    }
+
+    .content h3 {
+        font-size: 14px;
+    }
+
+    .content p {
+        font-size: 12px;
+    }
+
+    .services-section {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 35px 20px;
+        gap: 15px;
+    }
+
+    .what-we-offer {
+        grid-column: span 2;
+        text-align: center;
+    }
+
+    .what-we-offer h1 {
+        font-size: 30px;
+    }
+
+    .what-we-offer p {
+        font-size: 14px;
+    }
+
+    .offers {
+        min-height: 175px;
+        padding: 15px 8px;
+    }
+
+    .offers h3 {
+        font-size: 14px;
+    }
+
+    .offers p {
+        font-size: 12px;
+    }
+
+    .footer {
+        padding: 45px 5% 20px;
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px 20px;
+    }
+
+    .footer-about {
+        grid-column: span 2;
+    }
+
+    .footer-box h3 {
+        font-size: 16px;
+    }
+
+    .footer-box p,
+    .footer-box ul li a {
+        font-size: 13px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .footer-bottom div {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+}
+
+
+/* =========================================
+   11. SMALL MOBILE PHONES
+   320px - 480px
+========================================= */
+
+@media screen and (max-width: 480px) {
+
+    nav {
+        padding: 10px;
+    }
+
+    .header {
+        gap: 10px;
+    }
+
+    .header img {
+        width: 65px;
+    }
+
+    .nav-links {
+        gap: 8px 12px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .nav-button {
+        gap: 8px;
+    }
+
+    nav button {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+
+    .hero-section {
+        padding: 45px 15px 25px;
+    }
+
+    .hero-section span h4 {
+        font-size: 12px;
+    }
+
+    .hero-section h1 {
+        font-size: clamp(30px, 9vw, 40px);
+        line-height: 1.15;
+    }
+
+    .hero-section h3 {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .hero-section ul {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .hero-section button {
+        font-size: 13px;
+        padding: 11px 18px;
+    }
+
+    .buttons {
+        gap: 5px;
+    }
+
+    .courses {
+        width: calc(100% - 30px);
+
+        grid-template-columns: 1fr;
+
+        padding: 12px;
+        gap: 5px;
+    }
+
+    .content {
+        padding: 12px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .content:last-child {
+        border-bottom: none;
+    }
+
+    .content .material-symbols-outlined {
+        font-size: 26px;
+    }
+
+    .services-section {
+        grid-template-columns: 1fr;
+        padding: 30px 15px;
+        gap: 15px;
+    }
+
+    .what-we-offer {
+        grid-column: span 1;
+    }
+
+    .what-we-offer h1 {
+        font-size: 27px;
+    }
+
+    .what-we-offer p {
+        font-size: 13px;
+    }
+
+    .what-we-offer button {
+        font-size: 13px;
+    }
+
+    .offers {
+        min-height: 160px;
+        width: 100%;
+    }
+
+    .offers h3 {
+        font-size: 15px;
+    }
+
+    .offers p {
+        font-size: 13px;
+    }
+
+    .footer {
+        padding: 40px 20px 20px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-about {
+        grid-column: span 1;
+    }
+
+    .footer-box h3 {
+        font-size: 17px;
+    }
+
+    .footer-box p br {
+        display: none;
+    }
+
+    .footer-bottom {
+        font-size: 12px;
+        gap: 15px;
+    }
+
+    .footer-bottom div {
+        gap: 12px;
+    }
+
+    .footer-bottom a {
+        font-size: 11px;
+    }
+
+}
+
+
+/* =========================================
+   12. EXTRA SMALL PHONES
+   360px AND BELOW
+========================================= */
+
+@media screen and (max-width: 360px) {
+
+    .nav-links {
+        gap: 8px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+    }
+
+    .nav-button button {
+        padding: 8px 12px;
+        font-size: 11px;
+    }
+
+    .hero-section h1 {
+        font-size: 29px;
+    }
+
+    .hero-section h3 {
+        font-size: 12px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .buttons button {
+        width: 100%;
+        margin: 4px 0;
+    }
+
+    .courses {
+        padding: 8px;
+    }
+
+    .services-section {
+        padding: 25px 12px;
+    }
+
+    .footer {
+        padding: 35px 15px 15px;
+    }
+
+    .footer-box p,
+    .footer-box ul li a {
+        font-size: 12px;
+    }
+
+}
